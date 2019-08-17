@@ -19,4 +19,22 @@ Print a message:
 "<telephone number> spent the longest time, <total time> seconds, on the phone during 
 September 2016.".
 """
+phoneTime = {}
 
+for call in calls:
+    if call[0] in phoneTime:
+        phoneTime[call[0]] += call[3]
+    else:
+        phoneTime[call[0]] = call[3]
+    if call[1] in phoneTime:
+        phoneTime[call[1]] += call[3]
+    else:
+        phoneTime[call[1]] = call[3]
+
+longestTimeNumber = calls[0][0]
+
+for number in phoneTime.keys():
+    if phoneTime[number] > phoneTime[longestTimeNumber]:
+        longestTimeNumber = number
+
+print('{} spent the longest time, {} seconds, on the phone during September 2016.'.format(longestTimeNumber, phoneTime[longestTimeNumber]))
