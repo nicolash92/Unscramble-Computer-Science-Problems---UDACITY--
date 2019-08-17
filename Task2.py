@@ -23,13 +23,13 @@ phoneTime = {}
 
 for call in calls:
     if call[0] in phoneTime:
-        phoneTime[call[0]] += call[3]
+        phoneTime[call[0]] += int(call[3])
     else:
-        phoneTime[call[0]] = call[3]
+        phoneTime[call[0]] = int(call[3])
     if call[1] in phoneTime:
-        phoneTime[call[1]] += call[3]
+        phoneTime[call[1]] += int(call[3])
     else:
-        phoneTime[call[1]] = call[3]
+        phoneTime[call[1]] = int(call[3])
 
 longestTimeNumber = calls[0][0]
 
